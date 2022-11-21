@@ -1,11 +1,13 @@
-# Getting Started with Create React App
+#Launching SCO Web React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
-
+First lets get all dependencies:
+### 'npm install'
+To get webapp up and running:
 ### `npm start`
 
 Runs the app in the development mode.\
