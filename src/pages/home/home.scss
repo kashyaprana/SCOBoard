@@ -1,15 +1,47 @@
 .home{
-    display: flex;
+    img {
+        //let the image take up the full width of the screen
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: flex;
 
-    .homeContainer{
         
-        flex: 6;
-
-        .widgets{
-            display: flex;
-            padding: 20px;
-            gap: 20px;
-            
-        }
     }
+
+    .schedule{
+
+        //position the schedule in the center of the screen
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .calendar{
+        //position the calendar under the schedule
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        
+
+    }
+
+   
+
 }

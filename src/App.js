@@ -8,6 +8,11 @@ import Home from './pages/home/Home.jsx';
 import Login from './pages/login/Login.jsx';
 import List from './pages/list/List.jsx';
 import Single from './pages/single/Single.jsx';
+import Scheduler from './pages/scheduler/Scheduler';
+import Calendar from './pages/calendar/Calendar';
+import About from './pages/about/About';
+import Navbar from "./components/navbar/Navbar"
+import Sidebar from "./components/sidebar/Sidebar"
 
 
 
@@ -15,6 +20,7 @@ import Single from './pages/single/Single.jsx';
 function App() {
 
 const {currentUser} = useContext(AuthContext);
+
 
 
 
@@ -28,9 +34,14 @@ const RequireAuth = ({children}) => {
   return (
        <div className = "App">
         <BrowserRouter>
+        <Navbar />
+        
           <Routes>
             <Route path = "/">
             <Route path = "login" element = {<Login/>} /> {/*login page */}
+            <Route path = "scheduler" element = {<RequireAuth><Scheduler/></RequireAuth>} /> {/*schedule page */}
+            <Route path = "calendar" element = {<RequireAuth><Calendar/></RequireAuth>} /> {/*schedule page */}
+            <Route path = "about" element = {<RequireAuth><About/></RequireAuth>} /> {/*schedule page */}
             <Route index element = {<RequireAuth><Home/></RequireAuth>} /> {/*home page */}
             <Route path = "users"> {/*anything with /user/ takes to list page, anything with /user/xyz takes to single page */}
               <Route index element = {<RequireAuth><Single/></RequireAuth>} />

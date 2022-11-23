@@ -1,22 +1,20 @@
 import React from 'react'
 import "./home.scss"
-import Sidebar from "../../components/sidebar/Sidebar"
+import { Button } from '@mui/material'
 import Navbar from "../../components/navbar/Navbar"
-import Widget from "../../components/widget/Widget"
+import spirit from "../../images/splash.jpg"
+
 
 const Home = () => {
   return (
     <div className="home">
-       <Sidebar />
-       <div className="homeContainer">
-        <Navbar />
-        <div className = "widgets">
-          <Widget />
-          <Widget />
-          <Widget />
-
-            </div>
-          </div>
+      <img src={spirit} alt="spirit" className="splash" />
+      <div className = "schedule">
+      <Button href="https://app.10to8.com/book/miaywtclmfjagujsef/">Schedule Meeting</Button>
+      </div>
+      <div className = "calendar">
+      <Button a href="/calendar">Open Calendar</Button>
+      </div>
         </div>
   )
 }
