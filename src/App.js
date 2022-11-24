@@ -6,13 +6,13 @@ import { AuthContext } from "./contexts/AuthContext";
 //paths to each page
 import Home from './pages/home/Home.jsx';
 import Login from './pages/login/Login.jsx';
-import List from './pages/list/List.jsx';
+
 import Single from './pages/single/Single.jsx';
 import Scheduler from './pages/scheduler/Scheduler';
 import Calendar from './pages/calendar/Calendar';
 import About from './pages/about/About';
 import Navbar from "./components/navbar/Navbar"
-import Sidebar from "./components/sidebar/Sidebar"
+
 
 
 
@@ -28,20 +28,23 @@ const {currentUser} = useContext(AuthContext);
 const RequireAuth = ({children}) => {
   return currentUser ? children : <Navigate to ="/login" />
 };
-
+//test if user logged in
 //console.log(currentUser)
+
+
 //routes setup to each page
+//can potentially remove all links here and just have the navbar, attempt at finalization step
   return (
        <div className = "App">
         <BrowserRouter>
-        <Navbar />
         
+        <Navbar />
           <Routes>
             <Route path = "/">
             <Route path = "login" element = {<Login/>} /> {/*login page */}
             <Route path = "scheduler" element = {<RequireAuth><Scheduler/></RequireAuth>} /> {/*schedule page */}
             <Route path = "calendar" element = {<RequireAuth><Calendar/></RequireAuth>} /> {/*schedule page */}
-            <Route path = "about" element = {<RequireAuth><About/></RequireAuth>} /> {/*schedule page */}
+            <Route path = "about" element = {<About/> } /> {/*schedule page */}
             <Route index element = {<RequireAuth><Home/></RequireAuth>} /> {/*home page */}
             <Route path = "users"> {/*anything with /user/ takes to list page, anything with /user/xyz takes to single page */}
               <Route index element = {<RequireAuth><Single/></RequireAuth>} />

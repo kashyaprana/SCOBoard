@@ -38,7 +38,11 @@ padding: 0 2rem;
 }
 
 .site-title{
-    font-size: 2rem;
+    
+    //make image smaller
+    img{
+        height: 5rem;
+    }
     
 }
 

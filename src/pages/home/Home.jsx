@@ -1,20 +1,33 @@
 import React from 'react'
 import "./home.scss"
-import { Button } from '@mui/material'
-import Navbar from "../../components/navbar/Navbar"
+
 import spirit from "../../images/splash.jpg"
+
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { Button } from '@mui/material'
+
 
 
 const Home = () => {
   return (
+    <div className = "no-scrollHome">
     <div className="home">
       <img src={spirit} alt="spirit" className="splash" />
+
       <div className = "schedule">
-      <Button href="https://app.10to8.com/book/miaywtclmfjagujsef/">Schedule Meeting</Button>
+      <Button href="https://app.10to8.com/book/miaywtclmfjagujsef/">
+      Schedule a Meeting </Button>
+     
+      
       </div>
-      <div className = "calendar">
-      <Button a href="/calendar">Open Calendar</Button>
+      <CalendarMonthIcon className = "icon" />
+      <div className = "calendarHome">
+      <a href = "/calendar">
+       Calendar 
+      </a>
+     
       </div>
+        </div>
         </div>
   )
 }
