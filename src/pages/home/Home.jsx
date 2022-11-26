@@ -25,7 +25,13 @@ const Home = () => {
       <a href = "/calendar">
        Calendar 
       </a>
+      
+      </div>
+      <div className = "fileupload">
+      <Button href="/fileupload">
+      Upload a file </Button>
      
+      
       </div>
         </div>
         </div>
