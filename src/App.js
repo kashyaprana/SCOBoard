@@ -6,7 +6,7 @@ import { AuthContext } from "./contexts/AuthContext";
 //paths to each page
 import Home from './pages/home/Home.jsx';
 import Login from './pages/login/Login.jsx';
-
+import List from './pages/list/List.jsx';
 import Single from './pages/single/Single.jsx';
 import Scheduler from './pages/scheduler/Scheduler';
 import Calendar from './pages/calendar/Calendar';
@@ -43,8 +43,9 @@ const RequireAuth = ({children}) => {
             <Route path = "/">
             <Route path = "login" element = {<Login/>} /> {/*login page */}
             <Route path = "scheduler" element = {<RequireAuth><Scheduler/></RequireAuth>} /> {/*schedule page */}
-            <Route path = "calendar" element = {<RequireAuth><Calendar/></RequireAuth>} /> {/*schedule page */}
-            <Route path = "about" element = {<About/> } /> {/*schedule page */}
+            <Route path = "calendar" element = {<RequireAuth><Calendar/></RequireAuth>} /> {/*calendar page */}
+            <Route path = "list" element = {<RequireAuth><List/></RequireAuth>} /> {/*user list page*/}
+            <Route path = "about" element = {<About/> } /> {/*about page */}
             <Route index element = {<RequireAuth><Home/></RequireAuth>} /> {/*home page */}
             <Route path = "users"> {/*anything with /user/ takes to list page, anything with /user/xyz takes to single page */}
               <Route index element = {<RequireAuth><Single/></RequireAuth>} />

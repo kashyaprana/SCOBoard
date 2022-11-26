@@ -1,0 +1,43 @@
+.list{
+    height: 100vh;
+
+    
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    
+    
+    button{
+        //put bottom of page
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        border: none;
+        background-color: gold;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+
+    }
+    
+}
+
+.pegasus-pic{
+    //make this entire background
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url(../../images/pegasus.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+
+
+
+}
