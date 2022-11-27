@@ -3,9 +3,8 @@ import InfoIcon from '@mui/icons-material/Info';
 import {useNavigate, Link} from "react-router-dom";
 import { Button } from '@mui/material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import Logo from  '../../images/ucf_pegasus logo.png'
+import Logo from  '../../images/ucf_logo.png'
 import './navbar.scss'
-
 
 
 
@@ -14,12 +13,9 @@ const Navbar = () => {
 
   return (
     <nav className = 'nav'>
-      <a href = "/" className = "site-title">
-        <img src = {Logo} alt = "UCF Logo" className = "logo"/>
-      </a>
+      <a href = "/" className = "site-title"> UCF SCO</a>
       <ul>
         <li>
-          
           <a href = "/about"> About </a>
           </li> 
         <li>

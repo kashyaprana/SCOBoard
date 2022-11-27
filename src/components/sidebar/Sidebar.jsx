@@ -3,8 +3,34 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonIcon from '@mui/icons-material/Person';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import LogoutIcon from '@mui/icons-material/Logout';
+import React, { useRef, useState } from "react"
+import { AuthProvider, useAuth } from "../../contexts/AuthContext";
+import { useNavigate } from 'react-router-dom';
+
 
 export const Sidebar = () => {
+
+    
+    const [error, setError] = useState("")
+    const { currentUser, logout } = useAuth()
+  
+    const navigate = useNavigate();
+    async function handleLogout() {
+      setError("")
+  
+      try {
+        await logout()
+        navigate('/')
+        navigate(0)
+      } catch {
+        setError("Failed to log out")
+      }
+    }
+    
+
+
+
+
   return (
     <div className = 'sidebar'>
         <div className = "top">
@@ -29,7 +55,10 @@ export const Sidebar = () => {
                 </li>
                 <li>
                     <LogoutIcon className = "icon" />
-                    <span> Logout </span>
+                    <span> <button variant="link" onClick={handleLogout}>
+                    Log Out
+                    </button> </span>
+                    
                 </li>
              </ul>
             </div>
