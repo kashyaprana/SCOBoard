@@ -10,7 +10,7 @@ const FileUpload = () => {
             <div classname="row">
                 <div classname="main">
                     <span classname="break"></span>
-
+                    <p>File name should be "LastName_FirstName.pdf"</p>
                     <Upload></Upload>
                 </div>
             </div>

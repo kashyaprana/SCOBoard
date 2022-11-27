@@ -20,6 +20,10 @@ const Home = () => {
      
       
       </div>
+      <div className = "fileaccess">
+      <Button href="/fileaccess">
+      Access Files </Button>
+      </div>
       <CalendarMonthIcon className = "icon" />
       <div className = "calendarHome">
       <a href = "/calendar">
@@ -30,9 +34,9 @@ const Home = () => {
       <div className = "fileupload">
       <Button href="/fileupload">
       Upload a file </Button>
-     
-      
       </div>
+
+      
         </div>
         </div>
   )

@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { ref, uploadBytesResumable, getDownloadURL } from '@firebase/storage';
 import { storage } from '../../firebase';
-import Details from './Details';
-import { reauthenticateWithCredential } from 'firebase/auth';
-import { upload } from '@testing-library/user-event/dist/upload';
 
 const Upload = (list, setter) => {
 
@@ -13,19 +10,24 @@ const Upload = (list, setter) => {
     const [url, setUrl] = useState();
 
     const onFileUpload = () => {
+        //check if there is a file to upload
         if (!file) return;
         setIsLoading(true);
+        //reference to storage location
         const storageRef = ref(storage, `/files/${file.name}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
 
         uploadTask.on("state_changed", (snapshot) => {
+            //progress bar
             var progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
             setProgrss(progress);
+        // error catch
         }, (err) => {
             console.log(err);
             setIsLoading(false);
         },
             () => {
+                //get download URL
                 getDownloadURL(uploadTask.snapshot.ref)
                     .then(url => {
                         setUrl(url);

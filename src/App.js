@@ -13,6 +13,7 @@ import Calendar from './pages/calendar/Calendar';
 import About from './pages/about/About';
 import Navbar from "./components/navbar/Navbar"
 import FileUpload from "./pages/upload/FileUpload";
+import FileAccess from "./pages/fileaccess/FileAccess";
 
 
 
@@ -46,6 +47,7 @@ const RequireAuth = ({children}) => {
             <Route path = "scheduler" element = {<RequireAuth><Scheduler/></RequireAuth>} /> {/*schedule page */}
             <Route path = "calendar" element = {<RequireAuth><Calendar/></RequireAuth>} /> {/*schedule page */}
             <Route path = "fileupload" element = {<RequireAuth><FileUpload/></RequireAuth>} /> {/*upload page */}
+            <Route path = "fileaccess" element = {<RequireAuth><FileAccess/></RequireAuth>} /> {/*upload page */}
             <Route path = "about" element = {<About/> } /> {/*schedule page */}
             <Route index element = {<RequireAuth><Home/></RequireAuth>} /> {/*home page */}
             <Route path = "users"> {/*anything with /user/ takes to list page, anything with /user/xyz takes to single page */}
