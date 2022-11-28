@@ -18,7 +18,9 @@ const Navbar = () => {
       </a>
       <ul>
         <li>
-          
+          <a href = "/list"> User List </a>
+          </li>
+        <li>
           <a href = "/about"> About </a>
           </li> 
         <li>

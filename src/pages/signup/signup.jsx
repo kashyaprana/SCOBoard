@@ -11,6 +11,8 @@ import videoUCF from "../../images/chargeon.mp4"
 export default function Signup() {
     const emailRef = useRef()
     const passwordRef = useRef()
+    const firstNameRef = useRef()
+    const lastNameRef = useRef()
     const passwordConfirmRef = useRef()
     const { signup } = useAuth()
     const [error, setError] = useState("")
@@ -29,7 +31,7 @@ export default function Signup() {
       try {
         setError("")
         setLoading(true)
-        await signup(emailRef.current.value, passwordRef.current.value)
+        await signup(emailRef.current.value, passwordRef.current.value, firstNameRef.current.value, lastNameRef.current.value)
         navigate('/')  
       } catch {
         setError("Failed to create an account")
@@ -48,6 +50,8 @@ export default function Signup() {
         <h1> Welcome to the UCF Student Conduct Office</h1>
           {error && <Alert variant="danger">{error}</Alert>}
           
+          <input type = "first" placeholder = "First Name" ref = {firstNameRef}/>
+          <input type = "last" placeholder = "Last Name" ref = {lastNameRef}/>
           <input type = "email" placeholder = "Email" ref = {emailRef}/>
           <input type = "password" placeholder = "Password" ref = {passwordRef} />
           <input type = "password" placeholder = "Password Confirmation" ref = {passwordConfirmRef} />
