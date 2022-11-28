@@ -1,45 +1,89 @@
-import { useReducer,useEffect, createContext } from "react";
-import AuthReducer from "./AuthReducer";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./../firebase";
 
-const INITIAL_STATE = {
-    //SHOULD NOT USE LOCAL STORAGE, SUPER RISKY
-    currentUser: JSON.parse(localStorage.getItem("user")) || "{}", //gets current user from local storage or sets to null
-};
+import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { setDoc, doc, collection, onSnapshot,  query, where } from "firebase/firestore";
+import React, { useContext, useState, useEffect } from "react"
+import { auth, db } from "../firebase"
 
-export const AuthContext = createContext(INITIAL_STATE);
 
-export const AuthContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
+
+const AuthContext = React.createContext({})
+
+
+export function useAuth(){
+    return useContext(AuthContext)
+}
+
+export const AuthProvider = ({ children }) =>{
+    
+    const [currentUser, setCurrentUser] = useState({})
+    const [role, setRole] = useState({})
+    const [document, setDocument] = useState({})
+    const [loading, setLoading] = useState(true)
+
+    //These functions are taken straight from firebase website
+    function login(email, password){
+        return signInWithEmailAndPassword(auth, email, password)
+            
+    }
+
+    //this creates user auth and assigns admin role as false for the account
+    function signup(email, password){
+        return createUserWithEmailAndPassword(auth, email, password).then(async (cred) => {
+            const ref = doc(db, "users", cred.user.uid);
+                const docRef = await setDoc(ref,  {
+                    email: {email},
+                    admin: false
+                });
+        })
+    }
+    
+    function logout() {
+        return signOut(auth)
+      }
+
+    const findRole = (cred) => {
+        return db.collection('users').doc(cred.user.uid).get().then((querySnapshot) => {
+            if(querySnapshot.data()){
+                const data = querySnapshot.data();
+                setDocument(data);
+                setRole(data.email)
+                console.log(data);
+            }
+        }).catch((err) => {
+            console.log("error fetching document");
+            console.log("ERROR : " + err.message);
+        })
+    }
 
     useEffect(() => {
-        //SHOULD NOT USE LOCAL STORAGE, SUPER RISKY
-       // localStorage.setItem("user", JSON.stringify(state.currentUser)); //stores user in local storage so stays logged in
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                dispatch({
-                    type: "LOGIN",
-                    payload: user,
-                });
-            } else {
-                dispatch({
-                    type: "LOGOUT",
-                });
-            }
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            
+            setCurrentUser(user)
+
+            setLoading(false)
         });
 
-    }, [state.currentUser])
+        return () => {
+            unsubscribe();
+          };
+    }, []);
+    
 
+    const value = {
+        currentUser,
+        login,
+        signup,
+        logout,
+        findRole,
+        role
+        
 
+    }
+  
     return (
-        <AuthContext.Provider
-            value={{
-                currentUser: state.currentUser,
-                dispatch
-            }}
-        >
-            {children}
-        </AuthContext.Provider>
-    );
+    <AuthContext.Provider value = {value}>
+        {children}
+
+    </AuthContext.Provider>
+  )
 }

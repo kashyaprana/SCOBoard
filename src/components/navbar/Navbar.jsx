@@ -1,4 +1,3 @@
-
 import InfoIcon from '@mui/icons-material/Info';
 import {useNavigate, Link} from "react-router-dom";
 import { Button } from '@mui/material';
@@ -23,7 +22,7 @@ const Navbar = () => {
           <a href = "/about"> About </a>
           </li> 
         <li>
-          <a href = "/logout"> Logout </a>
+          <a href = "/login"> Log In </a>
           </li> 
       </ul>
       </nav>

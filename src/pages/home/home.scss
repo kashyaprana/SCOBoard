@@ -79,6 +79,89 @@
 
     }
 
+    .fileupload{
+        
+        //position the schedule in the center of the screen
+        position: absolute;
+        left: 50%;
+        bottom: 20%;
+        transform: translate(-50%, -50%);
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        &:hover {
+            background-color: whitesmoke;
+        }
+
+        //put box around button
+
+        
+            border: 2px solid #4CAF50;
+            background-color: white;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        
+        
+    }
+
+    .fileaccess{
+        
+        //position the schedule in the center of the screen
+        position: absolute;
+        left: 50%;
+        bottom: 0%;
+        transform: translate(-50%, -50%);
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        &:hover {
+            background-color: whitesmoke;
+        }
+
+        //put box around button
+
+        
+            border: 2px solid #4CAF50;
+            background-color: white;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        
+        
+    }
 
 .no-scrollHome{
     overflow: hidden;
