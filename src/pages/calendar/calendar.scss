@@ -10,13 +10,13 @@
     
     button{
         //put bottom of page
-        position: fixed;
+        position: absolute;
         bottom: 0;
         width: 100%;
         height: 30px;
         border: none;
         background-color: gold;
-        color: black;
+        color: white;
         font-weight: bold;
         cursor: pointer;
 

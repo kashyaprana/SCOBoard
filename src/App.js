@@ -24,8 +24,6 @@ import Navbar from "./components/navbar/Navbar.jsx"
 //a lot of code here is from firebase docs, above imports are for the nav bar and redirects
 function App() {
   
- 
-
 //console.log(currentUser)
 //routes setup to each page
   return (
@@ -33,23 +31,25 @@ function App() {
        <div className = "App">
         <BrowserRouter>
         <AuthProvider>
+       
         <Navbar />
           <Routes>
             
                 <Route element={<Login/>} path="/login"/>
-                <Route element={<Admin/>} path="/admin"/>
-                <Route element={<Signup/>} path="/signup"/>
+                <Route element={<ProtectedRoute><Admin/></ProtectedRoute>} path="/admin"/>
+                <Route element={<ProtectedRoute><Signup/></ProtectedRoute>} path="/signup"/>
                 <Route element={<About/>} path="/about"/>
                 <Route element={<ProtectedRoute><List/></ProtectedRoute>} path="/list"/>
                 <Route element={<Scheduler/>} path="/scheduler"/>
-                 <Route element={<ProtectedRoute><Calendar/></ProtectedRoute>} path="/calendar"/> {/*protect this one only  can go- signout button on home to sign up */}
+                <Route element={<ProtectedRoute><Calendar/></ProtectedRoute>} path="/calendar"/> {/*protect this one only  can go- signout button on home to sign up */}
                 <Route element={<FileUpload/>} path="/fileupload"/>
-                <Route element={<FileAccess/>} path="/fileaccess"/>
+                <Route element={<ProtectedRoute><FileAccess/></ProtectedRoute>} path="/fileaccess"/>
                 
                 <Route element={<Home/>} path="/" />
               
+       
           </Routes>
-        
+       
           </AuthProvider>
         </BrowserRouter>
         </div>

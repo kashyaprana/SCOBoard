@@ -6,12 +6,17 @@ import spirit from "../../images/splash.jpg"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { Button } from '@mui/material'
 
+import Nav from "../../components/adminNav/Nav.jsx"
+
+
+
 
 
 const Admin = () => {
   return (
     <div className = "no-scrollHome">
     <div className="home">
+      <Nav />
 
       <img src={spirit} alt="spirit" className="splash" />
 

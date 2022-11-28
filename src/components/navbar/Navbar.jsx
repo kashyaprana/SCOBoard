@@ -1,16 +1,21 @@
-import InfoIcon from '@mui/icons-material/Info';
-import {useNavigate, Link} from "react-router-dom";
-import { Button } from '@mui/material';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import Logo from  '../../images/ucf_pegasus logo.png'
 import './navbar.scss'
+import React from 'react'
+
+import {useLocation} from 'react-router-dom'
 
 
 
 
 const Navbar = () => {
   //const navigate = useNavigate() //used for button redirects
+  const  location = useLocation()
 
+  if (location.pathname === '/admin'){
+
+    return null
+  }
+  
   return (
     <nav className = 'nav'>
       <a href = "/" className = "site-title">

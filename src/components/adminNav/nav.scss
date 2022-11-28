@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav{
+//put on top of page
+
+width: 100%;
+background-color: black;
+color: gold;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 2rem;
+padding: 0 2rem;
+
+}
+
+.nav a{
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+}
+
+.nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display:flex;
+    gap: 1rem;
+
+}
+
+.site-title{
+    
+    //make image smaller
+    img{
+        height: 5rem;
+    }
+    
+}
+
+.nav li.active {
+    background-color: gold ;
+}
+
+.nav li.hover {
+    background-color: white ;
+}
