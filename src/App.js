@@ -6,6 +6,7 @@ import { AuthProvider, useAuth } from "./contexts/AuthContext";
 
 //paths to each page
 import Home from './pages/home/Home.jsx';
+import Admin from './pages/admin/Admin.jsx';
 import Login from './pages/login/Login.jsx';
 import List from './pages/list/List.jsx';
 import Scheduler from './pages/scheduler/Scheduler';
@@ -36,9 +37,10 @@ function App() {
           <Routes>
             
                 <Route element={<Login/>} path="/login"/>
+                <Route element={<Admin/>} path="/admin"/>
                 <Route element={<Signup/>} path="/signup"/>
                 <Route element={<About/>} path="/about"/>
-                <Route element={<ProtectedRoute><List/></ProtectedRoute>} path="/'list"/>
+                <Route element={<ProtectedRoute><List/></ProtectedRoute>} path="/list"/>
                 <Route element={<Scheduler/>} path="/scheduler"/>
                  <Route element={<ProtectedRoute><Calendar/></ProtectedRoute>} path="/calendar"/> {/*protect this one only  can go- signout button on home to sign up */}
                 <Route element={<FileUpload/>} path="/fileupload"/>

@@ -3,7 +3,6 @@ import "./home.scss"
 
 import spirit from "../../images/splash.jpg"
 
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { Button } from '@mui/material'
 
 
@@ -21,17 +20,9 @@ const Home = () => {
      
       
       </div>
-      <div className = "fileaccess">
-      <Button href="/fileaccess">
-      Access Files </Button>
-      </div>
-      <CalendarMonthIcon className = "icon" />
-      <div className = "calendarHome">
-      <a href = "/calendar">
-       Calendar 
-      </a>
       
-      </div>
+ 
+     
       <div className = "fileupload">
       <Button href="/fileupload">
       Upload a file </Button>
