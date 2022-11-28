@@ -16,11 +16,26 @@
 }
 
 .sco { 
+
+  background-image: url(../../images/pegasus.png);
   width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   filter: brightness(30%);
+
 }
 
-
+.no-scroll{
+  overflow: hidden;
+  max-height: 100%;
+ 
+}
 .scolink{
   position: absolute;
   top: 40%;
