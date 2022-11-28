@@ -1,6 +1,6 @@
 
 import Logo from  '../../images/ucf_pegasus logo.png'
-import './navbar.scss'
+import './nav.scss'
 import React from 'react'
 
 import {useLocation} from 'react-router-dom'
@@ -8,18 +8,18 @@ import {useLocation} from 'react-router-dom'
 
 
 
-const Navbar = () => {
+const Nav = () => {
   //const navigate = useNavigate() //used for button redirects
-  const  location = useLocation()
+//   const  location = useLocation()
 
-  if (location.pathname === '/admin'){
+//   if (location.pathname === '/admin'){
 
-    return null
-  }
+//     return null
+//   }
   
   return (
     <nav className = 'nav'>
-      <a href = "/" className = "site-title">
+      <a href = "/admin" className = "site-title">
         <img src = {Logo} alt = "UCF Logo" className = "logo"/>
       </a>
       <ul>
@@ -36,4 +36,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Nav

@@ -1,8 +1,9 @@
 import "./calendar.scss"
 import React from 'react'
-import Sidebar from "../../components/sidebar/Sidebar"
+
 import {useNavigate} from "react-router-dom";
 import "../../images/pegasus.png"
+
 
 
 
