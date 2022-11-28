@@ -1,0 +1,36 @@
+
+.about{
+  position: relative;
+  text-align: center;
+  color: white;
+  
+}
+
+.content{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+  font-size: 18px;
+  color: white;
+}
+
+.sco { 
+  width: 100%;
+  filter: brightness(30%);
+}
+
+
+.scolink{
+  position: absolute;
+  top: 40%;
+  left: 3%;
+  width: 10%;
+  transform: translate(100%, -90%);
+  padding-bottom: 1em;
+}
+
+.title{
+  color: gold;
+  font-size: 25px;
+}
