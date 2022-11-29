@@ -1,8 +1,8 @@
 #Launching SCO Web React App
-'''
-This is out POOS project, a UCF Student Conduct Scheduling App. Users, or "students", can book meetings with UCF Student Conduct Hearing Officers when they've been accused of misconduct, whether academic or other violations against UCF Student Core Policy. The webapp is also used by admins, after proper authentication from logging in, admins can view current appointments on their scheduler page. Names of the Hearing Officer, with the name of the student who booked the meeting is displayed along with a zoom link to hold the meeting virtually. Students are also able to upload documents to defend their case, as admins can view the documents from their end. 
 
-'''
+#This is out POOS project, a UCF Student Conduct Scheduling App. Users, or "students", can book meetings with UCF Student Conduct Hearing Officers when they've been accused of misconduct, whether academic or other violations against UCF Student Core Policy. The webapp is also used by admins, after proper authentication from logging in, admins can view current appointments on their scheduler page. Names of the Hearing Officer, with the name of the student who booked the meeting is displayed along with a zoom link to hold the meeting virtually. Students are also able to upload documents to defend their case, as admins can view the documents from their end. 
+
+
 
 ## Available Scripts
 
