@@ -1,55 +1,46 @@
 .calendar{
+    img {
+        //let the image take up the full width of the screen
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 90;
+        left: 0;
+        z-index: -1;
+        object-fit: cover;
+
+      
+        
+    }
+}
+
+.fixed{
     //put center of page
+    
     height:100vh;
-    
-    
+    top: 50%;
     justify-content:center;
     align-items:center;
     display:flex;
-    overflow: hidden;
     
     
     button{
         //put bottom of page
-        position: absolute;
+        position: fixed;
         bottom: 0;
         width: 100%;
         height: 30px;
         border: none;
         background-color: gold;
-        color: white;
+        color: black;
         font-weight: bold;
         cursor: pointer;
 
     }
-    
-}
-
-.pegasus-pic{
-    //make this entire background
-
-    background-image: url(../../images/pegasus.png);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(5px);
-
-    //take up bottom of page
 
     
-
-
-
 }
 
-.no-scroll{
-    overflow: hidden;
-    max-height: 90vh;
-   
-}

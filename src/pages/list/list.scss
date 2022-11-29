@@ -1,43 +1,74 @@
 .list{
-    height: 100vh;
+  height: 100vh;
+  color: black;
 
-    
-    justify-content:center;
-    align-items:center;
-    display:flex;
-    
-    
-    button{
-        //put bottom of page
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 30px;
-        border: none;
-        background-color: gold;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
+  justify-content:center;
+  align-items:center;
+  display:flex;
+  
+  button{
+      //put bottom of page
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 30px;
+      border: none;
+      background-color: gold;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
 
+  }
+
+  table {
+      border: 2px solid gold;
+      background-color: white;
+      width: 90vw;
+      height: max-content;
+      overflow:hidden;
+      position:fixed;
+      top:250px;
+      left:50px;
     }
-    
-}
+      
+    th {
+      text-align: center;
+      border: 1px solid black;
+    } 
+      
+    td {
+      text-align: left;
+      border: 1px solid black;
+    }
+
+    tbody {
+      text-align: left;
+      border: 1px solid black;
+    }
+
 
 .pegasus-pic{
-    //make this entire background
+  //make this entire background
 
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-image: url(../../images/pegasus.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(5px);
+  background-image: url(../../images/pegasus.png);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px);
+
+  //take up bottom of page
+}
 
 
-
+.no-scroll{
+  overflow: hidden;
+  max-height: 90vh;
+ 
+}
 }

@@ -3,14 +3,12 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { AuthContext, AuthContextProvider } from './contexts/AuthContext';
+import { AuthContext, AuthProvider } from './contexts/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <AuthContextProvider> {/*allows us to reach current user from anywhere */}
     <App />
-    </AuthContextProvider>
   </React.StrictMode>
 );
 
