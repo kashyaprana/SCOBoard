@@ -27,11 +27,12 @@ export const AuthProvider = ({ children }) =>{
     }
 
     //this creates user auth and assigns admin role as false for the account
-    function signup(email, password){
-        return createUserWithEmailAndPassword(auth, email, password).then(async (cred) => {
+    function signup(email, password, firstName, lastName){
+        return createUserWithEmailAndPassword(auth, email, password,firstName, lastName).then(async (cred) => {
             const ref = doc(db, "users", cred.user.uid);
                 const docRef = await setDoc(ref,  {
-                    email: {email},
+                    email: email,
+                    name : firstName, lastName,
                     admin: false
                 });
         })

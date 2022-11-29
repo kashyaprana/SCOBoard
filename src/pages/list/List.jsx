@@ -1,6 +1,6 @@
 import "./list.scss";
 import React from 'react'
-import Navbar from "../../components/navbar/Navbar.jsx"
+
 import { collection, doc, getDocs, onSnapshot } from "firebase/firestore";
 import {db} from "../../firebase.js"
 import {useNavigate} from "react-router-dom";
@@ -76,7 +76,7 @@ const List = () => {
 
     return (
         <div className= "no-scroll">
-            <Navbar />
+         
             <div className="list">
                 
                 <table>

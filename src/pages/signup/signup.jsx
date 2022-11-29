@@ -10,9 +10,9 @@ import videoUCF from "../../images/chargeon.mp4"
 
 export default function Signup() {
     const emailRef = useRef()
-    const passwordRef = useRef()
     const firstNameRef = useRef()
     const lastNameRef = useRef()
+    const passwordRef = useRef()
     const passwordConfirmRef = useRef()
     const { signup } = useAuth()
     const [error, setError] = useState("")
@@ -49,7 +49,6 @@ export default function Signup() {
       <form onSubmit = {handleSubmit}>
         <h1> Welcome to the UCF Student Conduct Office</h1>
           {error && <Alert variant="danger">{error}</Alert>}
-          
           <input type = "first" placeholder = "First Name" ref = {firstNameRef}/>
           <input type = "last" placeholder = "Last Name" ref = {lastNameRef}/>
           <input type = "email" placeholder = "Email" ref = {emailRef}/>
@@ -58,7 +57,7 @@ export default function Signup() {
           <button disabled = {loading}  type = "submit"> Sign up</button> 
           
           <div>
-        Already have an account? <Link to="/">Log In</Link>
+          <Link to="/admin">Go Back</Link>
           </div>
       </form>
 
