@@ -13,7 +13,7 @@ import { getStorage } from "firebase/storage";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAwH4sMQXZwc6YnCEqoLuD0Hlk71dh46Ew",
+
   authDomain: "scoapp-8527b.firebaseapp.com",
   databaseURL: "https://scoapp-8527b-default-rtdb.firebaseio.com",
   projectId: "scoapp-8527b",
